@@ -11,6 +11,6 @@ Statamic TALL Boilerplate provides you with a head start in building your Statam
 - [TailwindCss](https://tailwindcss.com)
 - [AlpineJs](https://github.com/alpinejs/alpine)
 - [Livewire](https://laravel-livewire.com)
-- [Laravel](https://laravel-livewire.com)
+- [Laravel](https://laravel.com)
 - [Tailwind CSS Dark Mode](https://github.com/ChanceArthur/tailwindcss-dark-mode)
 

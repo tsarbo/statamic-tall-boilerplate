@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel, to provide autocomplete information to your IDE
- * Generated for Laravel 7.26.0.
+ * Generated for Laravel 7.26.1.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -7336,8 +7336,8 @@
          * @static 
          */ 
         public static function broker($name = null)
-        {
-                        /** @var \Illuminate\Auth\Passwords\PasswordBrokerManager $instance */
+        {            //Method inherited from \Illuminate\Auth\Passwords\PasswordBrokerManager         
+                        /** @var \Statamic\Auth\Passwords\PasswordBrokerManager $instance */
                         return $instance->broker($name);
         }
                     /**
@@ -7347,8 +7347,8 @@
          * @static 
          */ 
         public static function getDefaultDriver()
-        {
-                        /** @var \Illuminate\Auth\Passwords\PasswordBrokerManager $instance */
+        {            //Method inherited from \Illuminate\Auth\Passwords\PasswordBrokerManager         
+                        /** @var \Statamic\Auth\Passwords\PasswordBrokerManager $instance */
                         return $instance->getDefaultDriver();
         }
                     /**
@@ -7359,8 +7359,8 @@
          * @static 
          */ 
         public static function setDefaultDriver($name)
-        {
-                        /** @var \Illuminate\Auth\Passwords\PasswordBrokerManager $instance */
+        {            //Method inherited from \Illuminate\Auth\Passwords\PasswordBrokerManager         
+                        /** @var \Statamic\Auth\Passwords\PasswordBrokerManager $instance */
                         $instance->setDefaultDriver($name);
         }
          

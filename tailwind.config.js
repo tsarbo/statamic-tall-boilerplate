@@ -1,63 +1,17 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
+    dark: 'class', // or 'media'
+    experimental: {
+        darkModeVariant: true,
+    },
     theme: {
         extend: {
             fontFamily: {
                 sans: ['Noto Sans', ...defaultTheme.fontFamily.sans],
                 mono: ['Menlo', ...defaultTheme.fontFamily.mono],
             },
-        },
-        typography: (theme) => ({
-            dark: {
-                css: {
-                    color: theme('colors.gray.300'),
-                    a: {
-                        color: theme('colors.green.500'),
-                        '&:hover': {
-                            color: theme('colors.green.500'),
-                        },
-                    },
-
-                    h1: {
-                        color: theme('colors.gray.300'),
-                    },
-                    h2: {
-                        color: theme('colors.gray.300'),
-                    },
-                    h3: {
-                        color: theme('colors.gray.300'),
-                    },
-                    h4: {
-                        color: theme('colors.gray.300'),
-                    },
-                    h5: {
-                        color: theme('colors.gray.300'),
-                    },
-                    h6: {
-                        color: theme('colors.gray.300'),
-                    },
-
-                    strong: {
-                        color: theme('colors.gray.300'),
-                    },
-
-                    code: {
-                        color: theme('colors.gray.300'),
-                    },
-
-                    figcaption: {
-                        color: theme('colors.gray.500'),
-                    },
-                },
-            },
-        }),
-    },
-    variants: {
-        backgroundColor: ['dark', 'dark-hover', 'dark-group-hover', 'dark-even', 'dark-odd'],
-        borderColor: ['dark', 'dark-disabled', 'dark-focus', 'dark-focus-within'],
-        textColor: ['dark', 'dark-hover', 'dark-active', 'dark-placeholder'],
-        visibilty: ['dark', 'dark-hover', 'dark-group-hover', 'dark-focus', 'dark-focus-within', 'dark-active']
+        }
     },
     purge: {
         content: [
@@ -75,11 +29,18 @@ module.exports = {
             defaultExtractor: (content) => content.match(/[\w-/.:]+(?<!:)/g) || [],
             whitelistPatterns: [/-active$/, /-enter$/, /-leave-to$/, /show$/],
         },
-        whitelist: ['mode-dark']
+        whitelist: ['dark']
+    },
+    variants: {
+        backgroundColor: ['dark', 'responsive', 'hover', 'focus'],
+        borderColor: ['dark', 'responsive', 'hover', 'focus'],
+        textColor: ['dark', 'responsive', 'hover', 'focus'],
+        divideColor: ['dark', 'responsive'],
+        placeholderColor: ['dark', 'responsive', 'focus'],
+        gradientColorStops: ['dark', 'responsive', 'hover', 'focus']
     },
     plugins: [
         require('@tailwindcss/ui'),
-        require('@tailwindcss/typography'),
-        require('tailwindcss-dark-mode')()
+        require('@tailwindcss/typography')
     ],
 };

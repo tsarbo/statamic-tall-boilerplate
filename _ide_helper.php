@@ -3403,6 +3403,8 @@
                     /**
          * 
          *
+         * @param mixed $cacheKey
+         * @param mixed $callback
          * @static 
          */ 
         public static function rememberWithExpiration($cacheKey, $callback)
@@ -3771,102 +3773,6 @@
         public static function hasMacro($name)
         {
                         return \Illuminate\Cookie\CookieJar::hasMacro($name);
-        }
-         
-    }
-            /**
-     * 
-     *
-     * @see \Illuminate\Encryption\Encrypter
-     */ 
-        class Crypt {
-                    /**
-         * Determine if the given key and cipher combination is valid.
-         *
-         * @param string $key
-         * @param string $cipher
-         * @return bool 
-         * @static 
-         */ 
-        public static function supported($key, $cipher)
-        {
-                        return \Illuminate\Encryption\Encrypter::supported($key, $cipher);
-        }
-                    /**
-         * Create a new encryption key for the given cipher.
-         *
-         * @param string $cipher
-         * @return string 
-         * @static 
-         */ 
-        public static function generateKey($cipher)
-        {
-                        return \Illuminate\Encryption\Encrypter::generateKey($cipher);
-        }
-                    /**
-         * Encrypt the given value.
-         *
-         * @param mixed $value
-         * @param bool $serialize
-         * @return string 
-         * @throws \Illuminate\Contracts\Encryption\EncryptException
-         * @static 
-         */ 
-        public static function encrypt($value, $serialize = true)
-        {
-                        /** @var \Illuminate\Encryption\Encrypter $instance */
-                        return $instance->encrypt($value, $serialize);
-        }
-                    /**
-         * Encrypt a string without serialization.
-         *
-         * @param string $value
-         * @return string 
-         * @throws \Illuminate\Contracts\Encryption\EncryptException
-         * @static 
-         */ 
-        public static function encryptString($value)
-        {
-                        /** @var \Illuminate\Encryption\Encrypter $instance */
-                        return $instance->encryptString($value);
-        }
-                    /**
-         * Decrypt the given value.
-         *
-         * @param string $payload
-         * @param bool $unserialize
-         * @return mixed 
-         * @throws \Illuminate\Contracts\Encryption\DecryptException
-         * @static 
-         */ 
-        public static function decrypt($payload, $unserialize = true)
-        {
-                        /** @var \Illuminate\Encryption\Encrypter $instance */
-                        return $instance->decrypt($payload, $unserialize);
-        }
-                    /**
-         * Decrypt the given string without unserialization.
-         *
-         * @param string $payload
-         * @return string 
-         * @throws \Illuminate\Contracts\Encryption\DecryptException
-         * @static 
-         */ 
-        public static function decryptString($payload)
-        {
-                        /** @var \Illuminate\Encryption\Encrypter $instance */
-                        return $instance->decryptString($payload);
-        }
-                    /**
-         * Get the encryption key.
-         *
-         * @return string 
-         * @static 
-         */ 
-        public static function getKey()
-        {
-                        /** @var \Illuminate\Encryption\Encrypter $instance */
-                        return $instance->getKey();
         }
          
     }
@@ -8079,6 +7985,8 @@
                     /**
          * 
          *
+         * @param mixed $route
+         * @param mixed $parameters
          * @static 
          */ 
         public static function cpRoute($route, $parameters = [])
@@ -10038,6 +9946,8 @@
                     /**
          * 
          *
+         * @param array $rules
+         * @param mixed $params
          * @static 
          */ 
         public static function validate($rules, ...$params)
@@ -10047,6 +9957,9 @@
                     /**
          * 
          *
+         * @param string $errorBag
+         * @param array $rules
+         * @param mixed $params
          * @static 
          */ 
         public static function validateWithBag($errorBag, $rules, ...$params)
@@ -10056,6 +9969,7 @@
                     /**
          * 
          *
+         * @param mixed $absolute
          * @static 
          */ 
         public static function hasValidSignature($absolute = true)
@@ -11153,33 +11067,7 @@
                     /**
          * 
          *
-         * @static 
-         */ 
-        public static function layout($layout)
-        {
-                        return \Illuminate\Routing\Router::layout($layout);
-        }
-                    /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function section($section)
-        {
-                        return \Illuminate\Routing\Router::section($section);
-        }
-                    /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function livewire($uri, $component = null)
-        {
-                        return \Illuminate\Routing\Router::livewire($uri, $component);
-        }
-                    /**
-         * 
-         *
+         * @param mixed $options
          * @static 
          */ 
         public static function auth($options = [])
@@ -11216,6 +11104,9 @@
                     /**
          * 
          *
+         * @param mixed $uri
+         * @param mixed $view
+         * @param mixed $data
          * @static 
          */ 
         public static function statamic($uri, $view, $data = [])
@@ -11225,6 +11116,7 @@
                     /**
          * 
          *
+         * @param mixed $routes
          * @static 
          */ 
         public static function amp($routes)
@@ -14179,6 +14071,73 @@
         class Str {
          
     }
+            /**
+     * 
+     *
+     */ 
+        class Collection {
+                    /**
+         * 
+         *
+         * @param mixed $key
+         * @param mixed $put
+         * @static 
+         */ 
+        public static function getOrPut($key, $put)
+        {
+                        return \Illuminate\Support\Collection::getOrPut($key, $put);
+        }
+                    /**
+         * 
+         *
+         * @param mixed $keyBy
+         * @static 
+         */ 
+        public static function keyByWithKey($keyBy)
+        {
+                        return \Illuminate\Support\Collection::keyByWithKey($keyBy);
+        }
+                    /**
+         * 
+         *
+         * @param mixed $prefix
+         * @static 
+         */ 
+        public static function localize($prefix = null)
+        {
+                        return \Illuminate\Support\Collection::localize($prefix);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function transpose()
+        {
+                        return \Illuminate\Support\Collection::transpose();
+        }
+                    /**
+         * 
+         *
+         * @param mixed $keys
+         * @static 
+         */ 
+        public static function toAugmentedArray($keys = null)
+        {
+                        return \Illuminate\Support\Collection::toAugmentedArray($keys);
+        }
+                    /**
+         * 
+         *
+         * @param mixed $keys
+         * @static 
+         */ 
+        public static function toAugmentedCollection($keys = null)
+        {
+                        return \Illuminate\Support\Collection::toAugmentedCollection($keys);
+        }
+         
+    }
      
 }
 
@@ -14659,7 +14618,7 @@
          *
          * @static 
          */ 
-        public static function component($alias, $viewClass)
+        public static function component($alias, $viewClass = null)
         {
                         /** @var \Livewire\LivewireManager $instance */
                         return $instance->component($alias, $viewClass);
@@ -14669,30 +14628,20 @@
          *
          * @static 
          */ 
-        public static function componentResolver($callback)
+        public static function getClass($alias)
         {
                         /** @var \Livewire\LivewireManager $instance */
-                        return $instance->componentResolver($callback);
+                        return $instance->getClass($alias);
         }
                     /**
          * 
          *
          * @static 
          */ 
-        public static function getComponentClass($alias)
+        public static function getInstance($component, $id)
         {
                         /** @var \Livewire\LivewireManager $instance */
-                        return $instance->getComponentClass($alias);
-        }
-                    /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function activate($component, $id)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
-                        return $instance->activate($component, $id);
+                        return $instance->getInstance($component, $id);
         }
                     /**
          * 
@@ -14723,6 +14672,16 @@
         {
                         /** @var \Livewire\LivewireManager $instance */
                         return $instance->test($name, $params);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function visit($browser, $class, $queryString = '')
+        {
+                        /** @var \Livewire\LivewireManager $instance */
+                        return $instance->visit($browser, $class, $queryString);
         }
                     /**
          * 
@@ -14804,136 +14763,6 @@
                         /** @var \Livewire\LivewireManager $instance */
                         return $instance->isOnVapor();
         }
-                    /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function isLaravel7()
-        {
-                        /** @var \Livewire\LivewireManager $instance */
-                        return $instance->isLaravel7();
-        }
-                    /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function resolveMethodDependencies($parameters, $reflector)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
-                        return $instance->resolveMethodDependencies($parameters, $reflector);
-        }
-                    /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function registerHydrationMiddleware($classes)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
-                        return $instance->registerHydrationMiddleware($classes);
-        }
-                    /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function registerInitialHydrationMiddleware($callables)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
-                        return $instance->registerInitialHydrationMiddleware($callables);
-        }
-                    /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function registerInitialDehydrationMiddleware($callables)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
-                        return $instance->registerInitialDehydrationMiddleware($callables);
-        }
-                    /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function hydrate($instance, $request)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
-                        return $instance->hydrate($instance, $request);
-        }
-                    /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function initialHydrate($instance, $request)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
-                        return $instance->initialHydrate($instance, $request);
-        }
-                    /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function initialDehydrate($instance, $response)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
-                        return $instance->initialDehydrate($instance, $response);
-        }
-                    /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function dehydrate($instance, $response)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
-                        return $instance->dehydrate($instance, $response);
-        }
-                    /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function hydrateProperty($callback)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
-                        return $instance->hydrateProperty($callback);
-        }
-                    /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function dehydrateProperty($callback)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
-                        return $instance->dehydrateProperty($callback);
-        }
-                    /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function performHydrateProperty($value, $property, $instance)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
-                        return $instance->performHydrateProperty($value, $property, $instance);
-        }
-                    /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function performDehydrateProperty($value, $property, $instance)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
-                        return $instance->performDehydrateProperty($value, $property, $instance);
-        }
          
     }
      
@@ -14973,6 +14802,294 @@
      
 }
 
+    namespace Illuminate\Http { 
+            /**
+     * 
+     *
+     */ 
+        class Request {
+                    /**
+         * 
+         *
+         * @param array $rules
+         * @param mixed $params
+         * @static 
+         */ 
+        public static function validate($rules, ...$params)
+        {
+                        return \Illuminate\Http\Request::validate($rules, ...$params);
+        }
+                    /**
+         * 
+         *
+         * @param string $errorBag
+         * @param array $rules
+         * @param mixed $params
+         * @static 
+         */ 
+        public static function validateWithBag($errorBag, $rules, ...$params)
+        {
+                        return \Illuminate\Http\Request::validateWithBag($errorBag, $rules, ...$params);
+        }
+                    /**
+         * 
+         *
+         * @param mixed $absolute
+         * @static 
+         */ 
+        public static function hasValidSignature($absolute = true)
+        {
+                        return \Illuminate\Http\Request::hasValidSignature($absolute);
+        }
+         
+    }
+     
+}
+
+    namespace Illuminate\Testing { 
+            /**
+     * 
+     *
+     * @mixin \Illuminate\Http\Response
+     */ 
+        class TestResponse {
+                    /**
+         * 
+         *
+         * @param mixed $component
+         * @static 
+         */ 
+        public static function assertSeeLivewire($component)
+        {
+                        return \Illuminate\Testing\TestResponse::assertSeeLivewire($component);
+        }
+                    /**
+         * 
+         *
+         * @param mixed $component
+         * @static 
+         */ 
+        public static function assertDontSeeLivewire($component)
+        {
+                        return \Illuminate\Testing\TestResponse::assertDontSeeLivewire($component);
+        }
+         
+    }
+     
+}
+
+    namespace Illuminate\Console { 
+            /**
+     * 
+     *
+     */ 
+        class Command {
+                    /**
+         * 
+         *
+         * @param mixed $command
+         * @static 
+         */ 
+        public static function tall($command)
+        {
+                        return \Illuminate\Console\Command::tall($command);
+        }
+         
+    }
+     
+}
+
+    namespace Illuminate\Routing { 
+            /**
+     * 
+     *
+     * @mixin \Illuminate\Routing\RouteRegistrar
+     */ 
+        class Router {
+                    /**
+         * 
+         *
+         * @param mixed $options
+         * @static 
+         */ 
+        public static function auth($options = [])
+        {
+                        return \Illuminate\Routing\Router::auth($options);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function resetPassword()
+        {
+                        return \Illuminate\Routing\Router::resetPassword();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function confirmPassword()
+        {
+                        return \Illuminate\Routing\Router::confirmPassword();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function emailVerification()
+        {
+                        return \Illuminate\Routing\Router::emailVerification();
+        }
+                    /**
+         * 
+         *
+         * @param mixed $uri
+         * @param mixed $view
+         * @param mixed $data
+         * @static 
+         */ 
+        public static function statamic($uri, $view, $data = [])
+        {
+                        return \Illuminate\Routing\Router::statamic($uri, $view, $data);
+        }
+                    /**
+         * 
+         *
+         * @param mixed $routes
+         * @static 
+         */ 
+        public static function amp($routes)
+        {
+                        return \Illuminate\Routing\Router::amp($routes);
+        }
+         
+    }
+            /**
+     * 
+     *
+     */ 
+        class Redirector {
+                    /**
+         * 
+         *
+         * @param mixed $route
+         * @param mixed $parameters
+         * @static 
+         */ 
+        public static function cpRoute($route, $parameters = [])
+        {
+                        return \Illuminate\Routing\Redirector::cpRoute($route, $parameters);
+        }
+         
+    }
+     
+}
+
+    namespace Illuminate\View { 
+            /**
+     * 
+     *
+     */ 
+        class ComponentAttributeBag {
+                    /**
+         * 
+         *
+         * @param mixed $name
+         * @static 
+         */ 
+        public static function wire($name)
+        {
+                        return \Illuminate\View\ComponentAttributeBag::wire($name);
+        }
+         
+    }
+            /**
+     * 
+     *
+     */ 
+        class View {
+                    /**
+         * 
+         *
+         * @param mixed $view
+         * @param mixed $params
+         * @static 
+         */ 
+        public static function extends($view, $params = [])
+        {
+                        return \Illuminate\View\View::extends($view, $params);
+        }
+                    /**
+         * 
+         *
+         * @param mixed $view
+         * @param mixed $params
+         * @static 
+         */ 
+        public static function layout($view, $params = [])
+        {
+                        return \Illuminate\View\View::layout($view, $params);
+        }
+                    /**
+         * 
+         *
+         * @param mixed $section
+         * @static 
+         */ 
+        public static function section($section)
+        {
+                        return \Illuminate\View\View::section($section);
+        }
+                    /**
+         * 
+         *
+         * @param mixed $slot
+         * @static 
+         */ 
+        public static function slot($slot)
+        {
+                        return \Illuminate\View\View::slot($slot);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function withoutExtractions()
+        {
+                        return \Illuminate\View\View::withoutExtractions();
+        }
+         
+    }
+     
+}
+
+    namespace Illuminate\Cache { 
+            /**
+     * 
+     *
+     * @mixin \Illuminate\Contracts\Cache\Store
+     */ 
+        class Repository {
+                    /**
+         * 
+         *
+         * @param mixed $cacheKey
+         * @param mixed $callback
+         * @static 
+         */ 
+        public static function rememberWithExpiration($cacheKey, $callback)
+        {
+                        return \Illuminate\Cache\Repository::rememberWithExpiration($cacheKey, $callback);
+        }
+         
+    }
+     
+}
+
 
 namespace  { 
             class App extends \Illuminate\Support\Facades\App {}
@@ -14985,7 +15102,6 @@ namespace  {
             class Cache extends \Illuminate\Support\Facades\Cache {}
             class Config extends \Illuminate\Support\Facades\Config {}
             class Cookie extends \Illuminate\Support\Facades\Cookie {}
-            class Crypt extends \Illuminate\Support\Facades\Crypt {}
             class DB extends \Illuminate\Support\Facades\DB {}
             class Eloquent extends \Illuminate\Database\Eloquent\Model {             
                 /**
